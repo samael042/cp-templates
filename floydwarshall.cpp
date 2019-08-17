@@ -1,12 +1,12 @@
 const int MAXN = 1e3+5;
-int d[N];
+int d[MAXN][MAXN];
 //set d[i][j] = w(i,j) initially, if there is an edge btw i and j.
 //set it as oo otherwise
 //d[i][i] = 0 for undirected graphs
 void warshall()
 {
 	for(int i = 0; i < n; i++)
-		dp[i][i] = 0;
+		dp[i][i] = 0; // commend up if the graph is directed
 	for(int k = 0; k < n; k++)
 	{
 		for(int i = 0; i < n; i++)

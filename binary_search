@@ -1,0 +1,12 @@
+bool check(int mid)
+{
+	
+}
+
+int lower_b(int low, int high)
+{
+	if(low >= high)return low;
+	int mid = (low+high)/2;
+	check(mid) ? low = mid : high = mid-1;
+	return lower_b(low,high);
+}

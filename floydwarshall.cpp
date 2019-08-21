@@ -6,7 +6,7 @@ int d[MAXN][MAXN];
 void warshall()
 {
 	for(int i = 0; i < n; i++)
-		dp[i][i] = 0; // commend up if the graph is directed
+		dp[i][i] = 0; // comment out if the graph is directed
 	for(int k = 0; k < n; k++)
 	{
 		for(int i = 0; i < n; i++)

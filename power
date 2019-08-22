@@ -1,0 +1,11 @@
+ll mul(ll x, ll y)
+{
+	return (((x+MOD)%MOD)*((y+MOD)%MOD))%MOD;
+}
+
+ll power(ll x, ll y)
+{
+	if(y == 0)
+		return 1;
+	return mul(mul(((y%2 != 0) ? x : 1),power(x,y/2)),power(x,y/2));
+}

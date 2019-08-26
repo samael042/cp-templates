@@ -1,0 +1,5 @@
+#pragma warning(disable:4996)
+#pragma comment(linker, "/stack:200000000")
+#pragma GCC optimize ("Ofast")
+ios::sync_with_stdio(false); // IO boost
+cin.tie(nullptr);

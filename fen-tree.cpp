@@ -26,6 +26,4 @@ struct BIT{
 		return ans;
 	}
 	
-	int query(int l, int r)
-		return pref(r)-pref(l-1);
 };

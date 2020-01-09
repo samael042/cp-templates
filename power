@@ -1,9 +1,9 @@
-ll mul(ll x, ll y)
+int mul(int x, int y)
 {
 	return (((x+MOD)%MOD)*((y+MOD)%MOD))%MOD;
 }
 
-ll power(ll x, ll y)
+int power(int x, int y)
 {
 	if(y == 0)
 		return 1;

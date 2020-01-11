@@ -1,29 +1,30 @@
-struct BIT{
-	int N;
-	vector<int> bit;
-	void init(int n)
-	{
-		N = n;
-		bit.assign(n+1,0);
-	}
-	void update(int idx, int val)
-	{
-		while(idx <= N)
-		{
-			bit[idx] += val;
-			idx += idx&(-idx);
-		}
-	}
+struct FenwickTree {
+    vector<int> bit;  // binary indexed tree
+    int n;
 
-	int pref(int idx)
-	{
-		int ans = 0;
-		while(idx > 0)
-		{
-			ans += bit[idx];
-			idx -= idx & -idx;
-		}
-		return ans;
-	}
-	
+    FenwickTree(int n) {
+        this->n = n;
+        bit.assign(n, 0);
+    }
+
+    FenwickTree(vector<int> a) : FenwickTree(a.size()) {
+        for (size_t i = 0; i < a.size(); i++)
+            add(i, a[i]);
+    }
+
+    int sum(int r) {
+        int ret = 0;
+        for (; r >= 0; r = (r & (r + 1)) - 1)
+            ret += bit[r];
+        return ret;
+    }
+
+    int sum(int l, int r) {
+        return sum(r) - sum(l - 1);
+    }
+
+    void add(int idx, int delta) {
+        for (; idx < n; idx = idx | (idx + 1))
+            bit[idx] += delta;
+    }
 };
